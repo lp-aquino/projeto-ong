@@ -1,45 +1,78 @@
-/* ESPECIFICAÇÃO: DESIGN SYSTEM */
+/* TEMA PADRÃO (LIGHT)
+  Definido no :root para ser o fallback
+*/
 :root {
-    /* 1. Paleta de Cores (8+ cores) - Tema "ONG Impacto" */
-    --color-primary-500: #0d6efd;   /* Azul (Confiança, Ação) */
+    /* 1. Paleta de Cores (Light) */
+    --color-primary-500: #0d6efd;
     --color-primary-700: #0a58ca;
-    
-    --color-secondary-500: #198754; /* Verde (Esperança, Projetos) */
+    --color-secondary-500: #198754;
     --color-secondary-700: #146c43;
+    --color-success-500: #198754;
+    --color-danger-500: #dc3545;
+    --color-info-500: #0dcaf0;
+    --color-warning-500: #ffc107;
 
-    --color-success-500: #198754;   /* Verde para sucesso */
-    --color-danger-500: #dc3545;    /* Vermelho para erro/validação */
-    --color-info-500: #0dcaf0;      /* Ciano para alertas */
-    --color-warning-500: #ffc107;   /* Amarelo */
-
-    --color-neutral-100: #f8f9fa;   /* Fundo da página */
-    --color-neutral-200: #e9ecef;   /* Fundo de seções */
-    --color-neutral-700: #495057;   /* Texto secundário */
-    --color-neutral-900: #212529;   /* Texto principal */
+    --color-bg: #f8f9fa;       /* Fundo da página */
+    --color-bg-card: #ffffff;  /* Fundo de cards/forms */
+    --color-text: #212529;     /* Texto principal */
+    --color-text-muted: #495057; /* Texto secundário */
+    --color-border: #e9ecef;   /* Bordas */
     --color-white: #ffffff;
     --color-black: #000000;
 
-    /* 2. Tipografia Hierárquica (5+ tamanhos) - Usando REM para acessibilidade */
+    /* ... (resto das variáveis de fonte, espaçamento, etc.) ... */
     --font-body: 'Arial', sans-serif;
     --font-heading: 'Georgia', 'Times New Roman', serif;
-
-    --font-size-sm: 0.875rem;  /* 14px */
-    --font-size-md: 1rem;      /* 16px (base) */
-    --font-size-lg: 1.25rem;   /* 20px */
-    --font-size-xl: 1.75rem;   /* 28px */
-    --font-size-xxl: 2.5rem;   /* 40px */
-    --font-size-xxxl: 3rem;    /* 48px */
-
-    /* 3. Sistema de Espaçamento Modular (Base 8px) */
-    --space-xs: 0.5rem;    /* 8px */
-    --space-sm: 1rem;      /* 16px */
-    --space-md: 1.5rem;    /* 24px */
-    --space-lg: 2rem;      /* 32px */
-    --space-xl: 3rem;      /* 48px */
-    --space-xxl: 4rem;     /* 64px */
-
-    /* Outras variáveis */
-    --border-radius: 0.375rem; /* 6px */
+    --font-size-sm: 0.875rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.75rem;
+    --font-size-xxl: 2.5rem;
+    --font-size-xxxl: 3rem;
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    --space-xxl: 4rem;
+    --border-radius: 0.375rem;
     --box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     --transition-speed: 0.3s ease;
+}
+
+/* TEMA DARK (Modo Escuro)
+  (WCAG 2.1 - Contraste)
+*/
+[data-theme="dark"] {
+    --color-primary-500: #3b8aff; /* Azul mais claro para contraste */
+    --color-primary-700: #0d6efd;
+    --color-secondary-500: #20c997; /* Verde mais claro */
+    --color-secondary-700: #198754;
+
+    --color-bg: #121212;       /* Fundo escuro */
+    --color-bg-card: #1e1e1e;  /* Fundo de cards escuro */
+    --color-text: #f8f9fa;     /* Texto claro */
+    --color-text-muted: #adb5bd; /* Texto secundário claro */
+    --color-border: #343a40;   /* Bordas claras */
+    
+    --box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* TEMA CONTRAST (Alto Contraste)
+  (WCAG 2.1 - Nível AA/AAA)
+*/
+[data-theme="contrast"] {
+    --color-primary-500: #0000FF; /* Azul puro */
+    --color-primary-700: #0000AA;
+    --color-secondary-500: #008000; /* Verde puro */
+    --color-secondary-700: #005000;
+    --color-danger-500: #FF0000; /* Vermelho puro */
+
+    --color-bg: #ffffff;       /* Fundo branco */
+    --color-bg-card: #ffffff;
+    --color-text: #000000;     /* Texto preto */
+    --color-text-muted: #000000;
+    --color-border: #000000;   /* Bordas pretas */
+
+    --box-shadow: 0 0 0 2px var(--color-border); /* Borda em vez de sombra */
 }
