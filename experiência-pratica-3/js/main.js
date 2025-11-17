@@ -129,4 +129,93 @@ document.addEventListener('DOMContentLoaded', () => {
         // Limpa todos os erros antigos antes de validar novamente
         clearAllErrors(form);
 
-        const fieldsToValidate = form.querySelectorAll('input[required], select
+        const fieldsToValidate = form.querySelectorAll('input[required], select[required]');
+        
+        fieldsToValidate.forEach(field => {
+            const value = field.value.trim();
+            
+            // 1. Validação: Campo Vazio
+            if (value === '') {
+                isValid = false;
+                showError(field, 'Este campo é obrigatório.');
+            
+            // 2. Validação: Padrão (Regex)
+            } else if (field.pattern) {
+                const regex = new RegExp(field.pattern);
+                if (!regex.test(value)) {
+                    isValid = false;
+                    // Usa a mensagem do atributo 'title' do HTML, se existir
+                    const message = field.title || 'Formato inválido.';
+                    showError(field, message);
+                }
+            
+            // 3. Validação: Email (tipo específico)
+            } else if (field.type === 'email' && !isValidEmail(value)) {
+                isValid = false;
+                showError(field, 'Por favor, insira um e-mail válido.');
+            }
+        });
+        
+        return isValid;
+    }
+
+    /**
+     * Exibe uma mensagem de erro abaixo do campo e aplica a classe 'invalid'
+     */
+    function showError(field, message) {
+        // Adiciona a classe CSS para destacar o input (ex: borda vermelha)
+        field.classList.add('invalid');
+        
+        // Encontra o elemento <small class="error-message"> mais próximo
+        const errorContainer = field.parentElement.querySelector('.error-message');
+        if (errorContainer) {
+            errorContainer.textContent = message;
+        }
+    }
+
+    /**
+     * Limpa todos os erros do formulário
+     */
+    function clearAllErrors(form) {
+        form.querySelectorAll('.invalid').forEach(field => {
+            field.classList.remove('invalid');
+        });
+        form.querySelectorAll('.error-message').forEach(container => {
+            container.textContent = '';
+        });
+    }
+
+    /**
+     * Checa se um e-mail tem um formato básico válido
+     */
+    function isValidEmail(email) {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+    }
+
+});
+
+
+// --- 4. MÁSCARAS DE FORMULÁRIO (AUXILIAR) ---
+// (Lógica da Entrega II, agora parte do módulo principal)
+
+function mascaraCPF(e) {
+    let valor = e.target.value.replace(/\D/g, '');
+    valor = valor.replace(/(\d{3})(\d)/, '$1.$2');
+    valor = valor.replace(/(\d{3})(\d)/, '$1.$2');
+    valor = valor.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+    e.target.value = valor.slice(0, 14);
+}
+
+function mascaraTelefone(e) {
+    let valor = e.target.value.replace(/\D/g, '');
+    valor = valor.replace(/^(\d{2})(\d)/g, '($1) $2');
+    valor = valor.replace(/(\d{5})(\d)/, '$1-$2');
+    e.target.value = valor.slice(0, 15);
+}
+
+function mascaraCEP(e) {
+    let valor = e.target.value.replace(/\D/g, '');
+    valor = valor.replace(/^(\d{5})(\d)/, '$1-$2');
+    e.target.value = valor.slice(0, 9);
+}
