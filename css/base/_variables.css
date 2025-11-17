@@ -1,0 +1,44 @@
+:root {
+    /* 1. Paleta de Cores (8+ cores) - Tema "ONG Impacto" */
+    --color-primary-500: #0d6efd;   /* Azul (Confiança, Ação) */
+    --color-primary-700: #0a58ca;
+    
+    --color-secondary-500: #198754; /* Verde (Esperança, Projetos) */
+    --color-secondary-700: #146c43;
+
+    --color-success-500: #198754;   /* Verde para sucesso */
+    --color-danger-500: #dc3545;    /* Vermelho para erro/validação */
+    --color-info-500: #0dcaf0;      /* Ciano para alertas */
+    --color-warning-500: #ffc107;   /* Amarelo */
+
+    --color-neutral-100: #f8f9fa;   /* Fundo da página */
+    --color-neutral-200: #e9ecef;   /* Fundo de seções */
+    --color-neutral-700: #495057;   /* Texto secundário */
+    --color-neutral-900: #212529;   /* Texto principal */
+    --color-white: #ffffff;
+    --color-black: #000000;
+
+    /* 2. Tipografia Hierárquica (5+ tamanhos) - Usando REM para acessibilidade */
+    --font-body: 'Arial', sans-serif;
+    --font-heading: 'Georgia', 'Times New Roman', serif;
+
+    --font-size-sm: 0.875rem;  /* 14px */
+    --font-size-md: 1rem;      /* 16px (base) */
+    --font-size-lg: 1.25rem;   /* 20px */
+    --font-size-xl: 1.75rem;   /* 28px */
+    --font-size-xxl: 2.5rem;   /* 40px */
+    --font-size-xxxl: 3rem;    /* 48px */
+
+    /* 3. Sistema de Espaçamento Modular (Base 8px) */
+    --space-xs: 0.5rem;    /* 8px */
+    --space-sm: 1rem;      /* 16px */
+    --space-md: 1.5rem;    /* 24px */
+    --space-lg: 2rem;      /* 32px */
+    --space-xl: 3rem;      /* 48px */
+    --space-xxl: 4rem;     /* 64px */
+
+    /* Outras variáveis */
+    --border-radius: 0.375rem; /* 6px */
+    --box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    --transition-speed: 0.3s ease;
+}
