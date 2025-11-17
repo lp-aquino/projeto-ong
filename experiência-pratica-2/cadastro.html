@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Participe - ONG Impacto</title>
+</head>
+<body>
+
+    <header>
+        <h1>ONG Impacto</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="cadastro.html">Participe</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="formulario-cadastro">
+            <h2>Formulário de Cadastro</h2>
+            <p>
+                Preencha seus dados para se tornar um voluntário ou apoiador.
+                Entraremos em contato em breve!
+            </p>
+
+            <form action="https://exemplo.com/processar-form" method="POST">
+                
+                <fieldset>
+                    <legend>Dados Pessoais</legend>
+                    
+                    <div>
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" id="nome" name="nome" required minlength="3">
+                    </div>
+                    
+                    <div>
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required placeholder="seuemail@dominio.com">
+                    </div>
+
+                    <div>
+                        <label for="cpf">CPF:</label>
+                        <input type="text" id="cpf" name="cpf" required 
+                               pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" 
+                               placeholder="000.000.000-00"
+                               title="Digite um CPF no formato: 000.000.000-00">
+                    </div>
+
+                    <div>
+                        <label for="telefone">Telefone:</label>
+                        <input type="tel" id="telefone" name="telefone" required
+                               pattern="\(\d{2}\) \d{5}-\d{4}"
+                               placeholder="(00) 00000-0000"
+                               title="Digite um telefone no formato: (00) 00000-0000">
+                    </div>
+                    
+                    <div>
+                        <label for="data_nascimento">Data de Nascimento:</label>
+                        <input type="date" id="data_nascimento" name="data_nascimento" required>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Endereço</legend>
+                    
+                    <div>
+                        <label for="cep">CEP:</label>
+                        <input type="text" id="cep" name="cep" required
+                               pattern="\d{5}-\d{3}"
+                               placeholder="00000-000"
+                               title="Digite um CEP no formato: 00000-000">
+                    </div>
+                    
+                    <div>
+                        <label for="endereco">Endereço (Rua e Nº):</label>
+                        <input type="text" id="endereco" name="endereco" required>
+                    </div>
+                    
+                    <div>
+                        <label for="cidade">Cidade:</label>
+                        <input type="text" id="cidade" name="cidade" required>
+                    </div>
+
+                    <div>
+                        <label for="estado">Estado:</label>
+                        <select id="estado" name="estado" required>
+                            <option value="">Selecione...</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <div>
+                    <button type="submit">Enviar Cadastro</button>
+                </div>
+            </form>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 ONG Impacto. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Adiciona os "escutadores" de evento quando o documento carregar
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('cpf').addEventListener('input', mascaraCPF);
+            document.getElementById('telefone').addEventListener('input', mascaraTelefone);
+            document.getElementById('cep').addEventListener('input', mascaraCEP);
+        });
+
+        function mascaraCPF(e) {
+            let valor = e.target.value.replace(/\D/g, ''); // Remove tudo que não é dígito
+            valor = valor.replace(/(\d{3})(\d)/, '$1.$2'); // Coloca ponto após o 3º dígito
+            valor = valor.replace(/(\d{3})(\d)/, '$1.$2'); // Coloca ponto após o 6º dígito
+            valor = valor.replace(/(\d{3})(\d{1,2})$/, '$1-$2'); // Coloca hífen após o 9º dígito
+            e.target.value = valor.slice(0, 14); // Limita ao tamanho máximo do CPF
+        }
+
+        function mascaraTelefone(e) {
+            let valor = e.target.value.replace(/\D/g, '');
+            valor = valor.replace(/^(\d{2})(\d)/g, '($1) $2'); // Coloca parênteses nos dois primeiros dígitos
+            valor = valor.replace(/(\d{5})(\d)/, '$1-$2'); // Coloca hífen após o 5º dígito (para celular)
+            e.target.value = valor.slice(0, 15); // Limita ao tamanho (00) 00000-0000
+        }
+
+        function mascaraCEP(e) {
+            let valor = e.target.value.replace(/\D/g, '');
+            valor = valor.replace(/^(\d{5})(\d)/, '$1-$2'); // Coloca hífen após o 5º dígito
+            e.target.value = valor.slice(0, 9); // Limita ao tamanho 00000-000
+        }
+    </script>
+
+</body>
+</html>
+
