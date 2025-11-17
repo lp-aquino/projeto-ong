@@ -1,0 +1,35 @@
+/* ESPECIFICAÇÃO: Sistema de Cards */
+/* Alvo: <article class="card ..."> */
+.card {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    height: 100%; /* Para cards da mesma altura */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--space-md);
+}
+
+.card-image {
+    width: 100%;
+    height: 250px; /* Altura fixa para a imagem */
+    object-fit: cover;
+}
+
+.card-body {
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Faz o corpo do card crescer */
+}
+
+.card-body h3 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-xs);
+}
+
+.card-body p {
+    flex-grow: 1; /* Empurra o conteúdo (badges) para baixo */
+    margin-bottom: var(--space-sm);
+}

@@ -1,0 +1,44 @@
+/* ESPECIFICAÇÃO: Badges e Alerts */
+
+/* Badges (usados nos cards de projeto) */
+.badge {
+    display: inline-block;
+    padding: 0.35em 0.65em;
+    font-size: var(--font-size-sm);
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+    border-radius: 0.5rem;
+    margin-right: var(--space-xs);
+}
+.badge-primary {
+    background-color: var(--color-primary-500);
+    color: var(--color-white);
+}
+.badge-secondary {
+    background-color: var(--color-secondary-500);
+    color: var(--color-white);
+}
+
+/* Alerts (usado no form de cadastro) */
+.alert {
+    padding: var(--space-md);
+    margin-top: var(--space-md);
+    border: 1px solid transparent;
+    border-radius: var(--border-radius);
+}
+.alert-info {
+    background-color: #cff4fc;
+    border-color: #b6effb;
+    color: #055160;
+}
+.alert-success {
+    background-color: #d1e7dd;
+    border-color: #badbcc;
+    color: #0f5132;
+}
+.alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+    color: #842029;
+}
