@@ -3,78 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script src="js/main.js" defer></script>
+    
     <title>Nossos Projetos - ONG Impacto</title>
 </head>
 <body>
 
-    <header>
-        <h1>ONG Impacto</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="projetos.html">Projetos</a></li>
-                <li><a href="cadastro.html">Participe</a></li>
-            </ul>
-        </nav>
+    <header class="main-header">
+        <div class="container navbar">
+            <a href="index.html" class="navbar-logo">
+                <h1>ONG Impacto</h1>
+            </a>
+            
+            <button class="navbar-toggle" id="navbarToggle" aria-label="Abrir menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="navbar-menu" id="navbarMenu">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li class="nav-item-dropdown">
+                        <a href="projetos.html">Projetos ▼</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#nossos-projetos">Educação</a></li>
+                            <li><a href="#nossos-projetos">Saúde</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="cadastro.html">Participe</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main>
+    <main class="container section">
         <section id="nossos-projetos">
             <h2>Conheça Nossas Frentes de Atuação</h2>
             <p>Atuamos em diversas áreas para gerar o máximo de impacto positivo.</p>
 
-            <article>
-                <h3>Projeto Sementes do Amanhã (Educação)</h3>
+            <div class="row">
                 
-                <img src="imagens/projeto-educacao.jpg" alt="Crianças em uma sala de aula participando de atividades educativas." width="600">
-                <p>
-                    Oferecemos reforço escolar, oficinas de leitura e atividades artísticas
-                    para mais de 100 crianças no contraturno escolar.
-                </p>
-            </article>
+                <article class="col-12 col-md-6">
+                    <div class="card">
+                        <img src="imagens/projeto-educacao.jpg" alt="Crianças em uma sala de aula participando de atividades educativas." class="card-image">
+                        <div class="card-body">
+                            <h3>Projeto Sementes do Amanhã (Educação)</h3>
+                            <p>
+                                Oferecemos reforço escolar, oficinas de leitura e atividades artísticas
+                                para mais de 100 crianças no contraturno escolar.
+                            </p>
+                            <span class="badge badge-secondary">Educação</span>
+                        </div>
+                    </div>
+                </article>
 
-            <article>
-                <h3>Projeto Saúde em Foco (Saúde)</h3>
-                <img src="imagens/projeto-saude.jpg" alt="Equipe médica realizando atendimentos em uma comunidade." width="600">
-                <p>
-                    Levamos atendimento médico e odontológico básico para comunidades
-                    remotas, focando na prevenção e no cuidado primário.
-                </p>
-            </article>
+                <article class="col-12 col-md-6">
+                     <div class="card">
+                        <img src="imagens/projeto-saude.jpg" alt="Equipe médica realizando atendimentos em uma comunidade." class="card-image">
+                        <div class="card-body">
+                            <h3>Projeto Saúde em Foco (Saúde)</h3>
+                            <p>
+                                Levamos atendimento médico e odontológico básico para comunidades
+                                remotas, focando na prevenção e no cuidado primário.
+                            </p>
+                             <span class="badge badge-primary">Saúde</span>
+                        </div>
+                    </div>
+                </article>
+                
+            </div>
         </section>
 
-        <section id="participe">
+        <section id="participe" class="section">
             <h2>Faça Parte da Mudança</h2>
             
-            <aside id="voluntariado">
-                <h3>Seja Voluntário</h3>
-                <p>
-                    Seu tempo e talento podem fazer uma enorme diferença. Precisamos de
-                    professores, dentistas, designers e muito mais!
-                </p>
-                <p>
-                    <a href="cadastro.html">Clique aqui para se cadastrar como voluntário!</a>
-                </p>
-            </aside>
+            <div class="row">
+                <aside id="voluntariado" class="col-12 col-lg-6">
+                    <h3>Seja Voluntário</h3>
+                    <p>
+                        Seu tempo e talento podem fazer uma enorme diferença. Precisamos de
+                        professores, dentistas, designers e muito mais!
+                    </p>
+                    <p>
+                        <a href="cadastro.html" class="btn btn-secondary">Quero ser voluntário!</a>
+                    </p>
+                </aside>
 
-            <aside id="doacao">
-                <h3>Como Doar</h3>
-                <p>
-                    Sua contribuição financeira nos permite manter nossos projetos
-                    funcionando e expandir nosso alcance.
-                </p>
-                <ul>
-                    <li>Doação única via PIX: <strong>pix@ongimpacto.org</strong></li>
-                    <li>Doação recorrente (em breve)</li>
-                </ul>
-            </aside>
+                <aside id="doacao" class="col-12 col-lg-6">
+                    <h3>Como Doar</h3>
+                    <p>
+                        Sua contribuição financeira nos permite manter nossos projetos
+                        funcionando e expandir nosso alcance.
+                    </p>
+                    <ul>
+                        <li>Doação única via PIX: <strong>pix@ongimpacto.org</strong></li>
+                        <li>Doação recorrente (em breve)</li>
+                    </ul>
+                </aside>
+            </div>
         </section>
     </main>
 
-    <footer>
+    <footer class="main-footer">
         <p>&copy; 2025 ONG Impacto. Todos os direitos reservados.</p>
     </footer>
 
 </body>
 </html>
-
