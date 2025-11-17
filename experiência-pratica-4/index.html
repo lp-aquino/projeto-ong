@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script src="js/main.js" defer></script>
+    
+    <title>ONG Impacto - Transformando Vidas</title>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container navbar">
+            <a href="#/" class="navbar-logo">
+                <h1>ONG Impacto</h1>
+            </a>
+            
+            <button class="navbar-toggle" id="navbarToggle" aria-label="Abrir menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="navbar-menu" id="navbarMenu">
+                <ul>
+                    <li><a href="#/">Início</a></li>
+                    <li class="nav-item-dropdown">
+                        <a href="#/projetos">Projetos ▼</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#/projetos">Educação</a></li>
+                            <li><a href="#/projetos">Saúde</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#/cadastro">Participe</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="app-content" class="container section">
+        </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 ONG Impacto. Todos os direitos reservados.</p>
+    </footer>
+
+
+    <template id="template-home">
+        <section id="sobre-nos">
+            <h2>Transformando Vidas Através da Ação</h2>
+            <p>
+                Bem-vindo à ONG Impacto. Nossa missão é promover o desenvolvimento social
+                e combater as desigualdades em comunidades carentes.
+            </p>
+            
+            <img src="imagens/ong-impacto.jpg" alt="Voluntários da ONG Impacto trabalhando em um mutirão comunitário." class="img-fluid hero-image">
+
+            <div class="row">
+                <article class="col-12 col-md-6">
+                    <h3>Nossa Missão</h3>
+                    <p>Facilitar o acesso à educação, saúde e cultura para crianças e adolescentes em situação de vulnerabilidade.</p>
+                </article>
+                <article class="col-12 col-md-6">
+                    <h3>Visão</h3>
+                    <p>Ser referência na criação de oportunidades e na construção de um futuro mais justo e solidário.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="contato">
+            <h2>Entre em Contato</h2>
+            <p>Quer saber mais? Fale conosco!</p>
+            <ul>
+                <li><strong>Email:</strong> contato@ongimpacto.org</li>
+                <li><strong>Telefone:</strong> (11) 99999-8888</li>
+                <li><strong>Endereço:</strong> Rua da Esperança, 123, São Paulo - SP</li>
+            </ul>
+        </section>
+    </template>
+
+
+    <template id="template-projetos">
+        <section id="nossos-projetos">
+            <h2>Conheça Nossas Frentes de Atuação</h2>
+            <p>Atuamos em diversas áreas para gerar o máximo de impacto positivo.</p>
+
+            <div class="row">
+                <article class="col-12 col-md-6">
+                    <div class="card">
+                        <img src="imagens/projeto-educacao.jpg" alt="Crianças em uma sala de aula participando de atividades educativas." class="card-image">
+                        <div class="card-body">
+                            <h3>Projeto Sementes do Amanhã (Educação)</h3>
+                            <p>
+                                Oferecemos reforço escolar, oficinas de leitura e atividades artísticas
+                                para mais de 100 crianças no contraturno escolar.
+                            </p>
+                            <span class="badge badge-secondary">Educação</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-12 col-md-6">
+                     <div class="card">
+                        <img src="imagens/projeto-saude.jpg" alt="Equipe médica realizando atendimentos em uma comunidade." class="card-image">
+                        <div class="card-body">
+                            <h3>Projeto Saúde em Foco (Saúde)</h3>
+                            <p>
+                                Levamos atendimento médico e odontológico básico para comunidades
+                                remotas, focando na prevenção e no cuidado primário.
+                            </p>
+                            <span class="badge badge-primary">Saúde</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="participe">
+            <h2>Faça Parte da Mudança</h2>
+            <div class="row">
+                <aside id="voluntariado" class="col-12 col-lg-6">
+                    <h3>Seja Voluntário</h3>
+                    <p>
+                        Seu tempo e talento podem fazer uma enorme diferença. Precisamos de
+                        professores, dentistas, designers e muito mais!
+                    </p>
+                    <p>
+                        <a href="#/cadastro" class="btn btn-secondary">Quero ser voluntário!</a>
+                    </p>
+                </aside>
+
+                <aside id="doacao" class="col-12 col-lg-6">
+                    <h3>Como Doar</h3>
+                    <p>
+                        Sua contribuição financeira nos permite manter nossos projetos
+                        funcionando e expandir nosso alcance.
+                    </p>
+                    <ul>
+                        <li>Doação única via PIX: <strong>pix@ongimpacto.org</strong></li>
+                        <li>Doação recorrente (em breve)</li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+    </template>
+
+
+    <template id="template-cadastro">
+        <section id="formulario-cadastro">
+            <h2>Formulário de Cadastro</h2>
+            <p>
+                Preencha seus dados para se tornar um voluntário ou apoiador.
+                Entraremos em contato em breve!
+            </p>
+
+            <form action="https://exemplo.com/processar-form" method="POST" class="contact-form" id="form-cadastro" novalidate>
+                
+                <fieldset>
+                    <legend>Dados Pessoais</legend>
+                    
+                    <div class="form-group">
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" id="nome" name="nome" required minlength="3">
+                        <small class="error-message"></small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required placeholder="seuemail@dominio.com">
+                        <small class="error-message"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cpf">CPF:</label>
+                        <input type="text" id="cpf" name="cpf" required 
+                               pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" 
+                               placeholder="000.000.000-00"
+                               title="Digite um CPF no formato: 000.000.000-00">
+                        <small class="error-message"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefone">Telefone:</label>
+                        <input type="tel" id="telefone" name="telefone" required
+                               pattern="\(\d{2}\) \d{5}-\d{4}"
+                               placeholder="(00) 00000-0000"
+                               title="Digite um telefone no formato: (00) 00000-0000">
+                        <small class="error-message"></small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="data_nascimento">Data de Nascimento:</label>
+                        <input type="date" id="data_n

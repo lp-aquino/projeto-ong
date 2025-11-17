@@ -1,0 +1,41 @@
+/* Reset básico e melhorias de acessibilidade */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Acessibilidade: fontes fluidas e altura de linha */
+html {
+    font-size: 16px; /* Define a base 1rem */
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-neutral-100);
+    color: var(--color-neutral-900);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* Acessibilidade: remove animações se o usuário preferir */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
