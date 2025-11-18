@@ -39,3 +39,14 @@ img, picture, video, canvas, svg {
     scroll-behavior: auto !important;
   }
 }
+
+body {
+    background-color: var(--color-bg); /* Use a variável */
+    color: var(--color-text);         /* Use a variável */
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    
+    /* TRANSIÇÃO DE TEMA (NOVO) */
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}

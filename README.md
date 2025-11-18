@@ -17,8 +17,7 @@ Versão final do projeto de desenvolvimento front-end, focado na criação de um
 9.  [Como Executar o Projeto](#9-como-executar-o-projeto)
 
 ---
-
-## 1. Sobre o Projeto
+### 1. Sobre o Projeto
 
 A plataforma **ONG Impacto** é um sistema web SPA (Single Page Application) que oferece a ONGs uma presença digital profissional e funcional. O sistema foi projetado para engajar diferentes perfis de usuários, desde visitantes até administradores, facilitando o gerenciamento de projetos, voluntariado e doações.
 
